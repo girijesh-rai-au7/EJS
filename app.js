@@ -42,11 +42,6 @@ app.get('/', (req,res)=>{
             break;
     }
 
-    if(currentDay=== 0 || currentDay === 6){
-        day = "weekend"
-    }else{
-        day = "weekday"
-    }
     res.render("list",{kindOfDay:day})
 
     
