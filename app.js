@@ -42,7 +42,10 @@ app.get('/', (req,res)=>{
             console.log("seven days only");
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> 81b40155ae5241fa9d9c835b9608851a2e5d8d5f
     res.render("list",{kindOfDay:day})
 
     
