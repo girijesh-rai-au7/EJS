@@ -39,14 +39,10 @@ app.get('/', (req,res)=>{
 
     
         default:
-            break;
+            console.log("current day is" + currentDay)
     }
 
-    if(currentDay=== 0 || currentDay === 6){
-        day = "weekend"
-    }else{
-        day = "weekday"
-    }
+    
     res.render("list",{kindOfDay:day})
 
     
