@@ -14,7 +14,7 @@ app.get('/', (req,res)=>{
     let day = "";
     switch (currentDay) {
         case 0:
-            day = "sunday"
+            day = "Sunday"
             
             break;
             case 1:
@@ -39,7 +39,7 @@ app.get('/', (req,res)=>{
 
     
         default:
-            console.log("current day is" + currentDay)
+            console.log("seven days only");
     }
 
     
