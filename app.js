@@ -3,52 +3,31 @@
 const express = require('express')
 
 const app = express()
-const ejs = require('ejs')
+const ejs = require('ejs');
 const bodyParser = require('body-parser')
+let items = [];//items and item should be declared globally
+let item = "" ;  //important line iten should be declared globally not inside app.post
+
+
 
 app.set('view engine', 'ejs')
+app.use(express.urlencoded({extended:true}))
 
 app.get('/', (req,res)=>{
     let today = new Date();
-    let currentDay = today.getDay();
-    let day = "";
-    switch (currentDay) {
-        case 0:
-            day = "Sunday"
-            
-            break;
-            case 1:
-                day ="Monday";
-                break;
-                case 2:
-                    day = "Tuesday";
-                    break;
-                    case 3:
-                    day = "Wednesday";
-                    break;
-                    case 4:
-                    day = "Thursday";
-                    break;
-                    case 5:
-                    day = "Friday";
-                    break;
-                    case 6:
-                    day = "Saturday";
-                    break;
-                
+    const options = {weekday:'long',month:'long',day:'numeric'}
+    let day = today.toLocaleDateString("en-US",options);
+          
+
+    res.render("list",{kindOfDay:day, newListItems:items})
 
     
-        default:
-            console.log("seven days only");
-    }
-
-<<<<<<< HEAD
+})
+app.post('/',(req,res)=>{
+   item = req.body.newItem;
+  items.push(item)
     
-=======
->>>>>>> 81b40155ae5241fa9d9c835b9608851a2e5d8d5f
-    res.render("list",{kindOfDay:day})
-
-    
+    res.redirect('/')
 })
 app.listen(3000,()=>{
     console.log("server is runnning")

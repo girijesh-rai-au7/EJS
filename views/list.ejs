@@ -1,21 +1,28 @@
 <!-- //ejs markup looks like <%= %> -->
-
+<!-- ejs file ia actually html file with ejs watermark <%=%> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <title>EJS</title>
+    <title>EJS embedded javascript templating</title>
 </head>
 <body>
 
-   <% if(kindOfDay === "Monday" ) { %>
-        <h1 style = "color:aqua">Today is <%= kindOfDay %></h1>
+   <h1 style="color: blue"><%= kindOfDay %> </h1>
 
-   <% }else { %>
-        <h1 style="color: blue">Today is <%= kindOfDay %></h1>
-   <% } %>
+
+   <ul>
+ <% for(let i = 0; i< newListItems.length ; i++){ %>
+      <li> <%= newListItems[i] %> </li>
+ <% } %>
+
+   </ul>
+   <form action="/" method="post">
+        <input type="text" name="newItem" >
+        <button type="submit" name="button">add item</button>
+   </form>
    
     
 </body>
