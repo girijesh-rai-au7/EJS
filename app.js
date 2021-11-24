@@ -1,11 +1,13 @@
-//embedded javascript template
+//embedded javascript template`
+
 
 const express = require('express')
 
 const app = express()
 const ejs = require('ejs');
 const bodyParser = require('body-parser')
-let items = [];//items and item should be declared globally
+app.use(express.static("public"))
+let items = ["buy food","cook food"];//items and item should be declared globally
 let item = "" ;  //important line iten should be declared globally not inside app.post
 
 

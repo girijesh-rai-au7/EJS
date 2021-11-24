@@ -1,5 +1,4 @@
-<!-- //ejs markup looks like <%= %> -->
-<!-- ejs file ia actually html file with ejs watermark <%=%> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <title>EJS embedded javascript templating</title>
+    <link rel="stylesheet" href="css\styles.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
 
 
    <ul>
- <% for(let i = 0; i< newListItems.length ; i++){ %>
+ <% for(let i = 0; i < newListItems.length ; i++){ %>
       <li> <%= newListItems[i] %> </li>
  <% } %>
 
@@ -27,3 +27,5 @@
     
 </body>
 </html>
+
+<!-- passing data from list.ejs page to server -->
